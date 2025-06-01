@@ -17,7 +17,7 @@ struct MainView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack {
+            VStack {
                 List {
                     ForEach(vm.items, id: \.self) { item in
                         ItemCellView(item: item) {
@@ -45,7 +45,7 @@ struct MainView: View {
                     }
                 }
                 BottomBarView(vm: vm) { isCreatingNewItem = true }
-                .padding(.top, 600)
+                
             }
             .listStyle(.plain)
             .navigationTitle("Задачи")

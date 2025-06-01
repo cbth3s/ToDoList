@@ -28,19 +28,7 @@ struct BottomBarView: View {
         }
         .padding(.vertical, 10)
         .background(.gray.opacity(0.6))
+        .edgesIgnoringSafeArea(.bottom)
         .overlay(Divider(), alignment: .top)
-    }
-}
-
-
-struct BottomBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        let mockVM = CoreDataViewModel()
-        // Добавляем тестовые данные
-        mockVM.items = [ItemEntity(), ItemEntity(), ItemEntity()]
-        
-        return BottomBarView(vm: mockVM, addAction: {})
-            .previewDisplayName("3 задачи")
-            .previewLayout(.sizeThatFits)
     }
 }
