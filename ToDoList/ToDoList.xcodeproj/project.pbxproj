@@ -13,6 +13,9 @@
 		54C997FD2DECAB1A005DC941 /* ApiResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C997FC2DECAB1A005DC941 /* ApiResponseModel.swift */; };
 		54C997FF2DECAB46005DC941 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C997FE2DECAB46005DC941 /* ItemModel.swift */; };
 		54C998022DECAB6E005DC941 /* ItemsContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54C998002DECAB6E005DC941 /* ItemsContainer.xcdatamodeld */; };
+		54C998052DECAD09005DC941 /* CoreDataVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C998042DECAD09005DC941 /* CoreDataVIewModel.swift */; };
+		54C998072DECAD28005DC941 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C998062DECAD28005DC941 /* CoreDataManager.swift */; };
+		54C998342DECB85D005DC941 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C998332DECB85D005DC941 /* ApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		54C997FC2DECAB1A005DC941 /* ApiResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseModel.swift; sourceTree = "<group>"; };
 		54C997FE2DECAB46005DC941 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		54C998012DECAB6E005DC941 /* ItemsContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ItemsContainer.xcdatamodel; sourceTree = "<group>"; };
+		54C998042DECAD09005DC941 /* CoreDataVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataVIewModel.swift; sourceTree = "<group>"; };
+		54C998062DECAD28005DC941 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		54C998332DECB85D005DC941 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 		54C997F92DECA9D3005DC941 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				54C998042DECAD09005DC941 /* CoreDataVIewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -93,6 +100,8 @@
 		54C997FB2DECA9FD005DC941 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				54C998062DECAD28005DC941 /* CoreDataManager.swift */,
+				54C998332DECB85D005DC941 /* ApiManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -177,10 +186,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54C998342DECB85D005DC941 /* ApiManager.swift in Sources */,
 				54C997F52DECA9C6005DC941 /* ContentView.swift in Sources */,
 				54C997F62DECA9C6005DC941 /* ToDoListApp.swift in Sources */,
 				54C997FF2DECAB46005DC941 /* ItemModel.swift in Sources */,
+				54C998052DECAD09005DC941 /* CoreDataVIewModel.swift in Sources */,
 				54C998022DECAB6E005DC941 /* ItemsContainer.xcdatamodeld in Sources */,
+				54C998072DECAD28005DC941 /* CoreDataManager.swift in Sources */,
 				54C997FD2DECAB1A005DC941 /* ApiResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
