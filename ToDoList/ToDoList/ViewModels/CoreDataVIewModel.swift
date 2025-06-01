@@ -13,9 +13,20 @@ final class CoreDataViewModel: ObservableObject {
     let manager = CoreDataManager.shared
     
     @Published var items: [ItemEntity] = []
+    @Published var searchText: String = ""
     
     init() {
         fetchItem()
+    }
+    
+    var filteredItems: [ItemEntity] {
+        if searchText.isEmpty {
+            return items
+        } else {
+            return items.filter {
+                $0.title?.range(of: searchText, options: .caseInsensitive) != nil || $0.details?.range(of: searchText, options: .caseInsensitive) != nil
+            }
+        }
     }
     
     func fetchItem() {

@@ -13,13 +13,12 @@ struct MainView: View {
     @State private var isCreatingNewItem = false
     @State private var editingItem: ItemEntity?
     @StateObject private var vm = CoreDataViewModel()
-    @State var searchText: String = ""
     
     var body: some View {
         NavigationStack {
             VStack {
                 List {
-                    ForEach(vm.items, id: \.self) { item in
+                    ForEach(vm.filteredItems, id: \.self) { item in
                         ItemCellView(item: item) {
                             vm.toggleCompletion(item: item)
                         }
@@ -41,7 +40,7 @@ struct MainView: View {
             }
             .listStyle(.plain)
             .navigationTitle("Задачи")
-            .searchable(text: $searchText)
+            .searchable(text: $vm.searchText)
             ///Navigation to edit task
             .navigationDestination(item: $editingItem) { item in
                 ItemView(vm: vm, item: item)
