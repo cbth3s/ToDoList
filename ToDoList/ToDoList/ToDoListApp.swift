@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct ToDoListApp: App {
+    
+    init() {
+        DataManager.shared.seedDataFromAPI()
+    }
+    
     var body: some Scene {
         WindowGroup {
             MainView()

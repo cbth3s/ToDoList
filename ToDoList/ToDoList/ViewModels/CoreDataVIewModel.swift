@@ -21,6 +21,9 @@ final class CoreDataViewModel: ObservableObject {
     func fetchItem() {
         let request = NSFetchRequest<ItemEntity>(entityName: "ItemEntity")
         
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        request.sortDescriptors = [sortDescriptor]
+        
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             
             do {

@@ -22,6 +22,7 @@
 		54C9983C2DECC050005DC941 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9983B2DECC050005DC941 /* MainView.swift */; };
 		54C9983E2DECE107005DC941 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9983D2DECE107005DC941 /* BottomBarView.swift */; };
 		54C998402DECEAA6005DC941 /* ItemContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9983F2DECEAA6005DC941 /* ItemContextMenu.swift */; };
+		54C9986D2DECF0FF005DC941 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9986C2DECF0FF005DC941 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		54C9983B2DECC050005DC941 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		54C9983D2DECE107005DC941 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 		54C9983F2DECEAA6005DC941 /* ItemContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemContextMenu.swift; sourceTree = "<group>"; };
+		54C9986C2DECF0FF005DC941 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			children = (
 				54C998062DECAD28005DC941 /* CoreDataManager.swift */,
 				54C998332DECB85D005DC941 /* ApiManager.swift */,
+				54C9986C2DECF0FF005DC941 /* DataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				54C997F52DECA9C6005DC941 /* ContentView.swift in Sources */,
 				54C9983E2DECE107005DC941 /* BottomBarView.swift in Sources */,
 				54C997F62DECA9C6005DC941 /* ToDoListApp.swift in Sources */,
+				54C9986D2DECF0FF005DC941 /* DataManager.swift in Sources */,
 				54C997FF2DECAB46005DC941 /* ItemModel.swift in Sources */,
 				54C9983A2DECC011005DC941 /* ItemView.swift in Sources */,
 				54C998052DECAD09005DC941 /* CoreDataVIewModel.swift in Sources */,
