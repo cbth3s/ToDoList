@@ -24,23 +24,15 @@ struct MainView: View {
                             vm.toggleCompletion(item: item)
                         }
                         .contextMenu {
-                            Button {
-                                editingItem = item
-                            } label: {
-                                Label("Редактировать", systemImage: "pencil")
-                            }
-                            Button {
-                                
-                            } label: {
-                                Label("Поделиться", systemImage: "square.and.arrow.up")
-                            }
-                            Button(role: .destructive) {
-                                if let index = vm.items.firstIndex(of: item) {
-                                    vm.deleteItem(indexSet: IndexSet(integer: index))
+                            ItemContextMenu(
+                                item: item,
+                                onEdit: { editingItem = item },
+                                onDelete: {
+                                    if let index = vm.items.firstIndex(of: item) {
+                                        vm.deleteItem(indexSet: IndexSet(integer: index))
+                                    }
                                 }
-                            } label: {
-                                Label("Удалить", systemImage: "trash")
-                            }
+                            )
                         }
                     }
                 }

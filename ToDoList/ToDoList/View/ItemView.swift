@@ -82,7 +82,7 @@ struct ItemView: View {
     
     private var dateFormat: String {
         let format = DateFormatter()
-        format.dateFormat = "d/M/yy"
+        format.dateFormat = "dd/MM/yy"
         return format.string(from: date)
     }
     
