@@ -77,30 +77,25 @@
 		54C997F42DECA9C6005DC941 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
-				54C997FA2DECA9DA005DC941 /* Models */,
-				54C997F82DECA9CA005DC941 /* View */,
-				54C997F92DECA9D3005DC941 /* ViewModels */,
-				54C997FB2DECA9FD005DC941 /* Services */,
-				54C998032DECABD1005DC941 /* CoreData */,
+				54C998712DED197E005DC941 /* App */,
+				54C998722DED198F005DC941 /* Core */,
+				54C998742DED19E7005DC941 /* Features */,
+				54C998782DED1B44005DC941 /* Shared */,
 				54C997F12DECA9C6005DC941 /* Assets.xcassets */,
-				54C997F32DECA9C6005DC941 /* ToDoListApp.swift */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
 		};
-		54C997F82DECA9CA005DC941 /* View */ = {
+		54C997F82DECA9CA005DC941 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				54C998762DED1AAC005DC941 /* Components */,
 				54C997F22DECA9C6005DC941 /* ContentView.swift */,
-				54C998352DECBFE1005DC941 /* ButtonBackView.swift */,
 				54C998372DECBFF6005DC941 /* ItemCellView.swift */,
 				54C998392DECC011005DC941 /* ItemView.swift */,
 				54C9983B2DECC050005DC941 /* MainView.swift */,
-				54C9983D2DECE107005DC941 /* BottomBarView.swift */,
-				54C9983F2DECEAA6005DC941 /* ItemContextMenu.swift */,
-				54C9986E2DED0BB3005DC941 /* ShareHelper.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		54C997F92DECA9D3005DC941 /* ViewModels */ = {
@@ -120,22 +115,99 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		54C997FB2DECA9FD005DC941 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				54C998062DECAD28005DC941 /* CoreDataManager.swift */,
-				54C998332DECB85D005DC941 /* ApiManager.swift */,
-				54C9986C2DECF0FF005DC941 /* DataManager.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		54C998032DECABD1005DC941 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				54C998002DECAB6E005DC941 /* ItemsContainer.xcdatamodeld */,
+				54C998062DECAD28005DC941 /* CoreDataManager.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		54C998712DED197E005DC941 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				54C997F32DECA9C6005DC941 /* ToDoListApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		54C998722DED198F005DC941 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				54C998032DECABD1005DC941 /* CoreData */,
+				54C998732DED19B9005DC941 /* Networking */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		54C998732DED19B9005DC941 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				54C998332DECB85D005DC941 /* ApiManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		54C998742DED19E7005DC941 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				54C998752DED1A18005DC941 /* Items */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		54C998752DED1A18005DC941 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				54C997FA2DECA9DA005DC941 /* Models */,
+				54C997F82DECA9CA005DC941 /* Views */,
+				54C997F92DECA9D3005DC941 /* ViewModels */,
+				54C9987A2DED1D5B005DC941 /* Services */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		54C998762DED1AAC005DC941 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				54C998772DED1ABC005DC941 /* ContextMenu */,
+				54C9983D2DECE107005DC941 /* BottomBarView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		54C998772DED1ABC005DC941 /* ContextMenu */ = {
+			isa = PBXGroup;
+			children = (
+				54C9983F2DECEAA6005DC941 /* ItemContextMenu.swift */,
+				54C9986E2DED0BB3005DC941 /* ShareHelper.swift */,
+			);
+			path = ContextMenu;
+			sourceTree = "<group>";
+		};
+		54C998782DED1B44005DC941 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				54C998792DED1B60005DC941 /* Views */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		54C998792DED1B60005DC941 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				54C998352DECBFE1005DC941 /* ButtonBackView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		54C9987A2DED1D5B005DC941 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				54C9986C2DECF0FF005DC941 /* DataManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
