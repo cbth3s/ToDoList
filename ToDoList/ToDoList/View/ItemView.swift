@@ -56,7 +56,8 @@ struct ItemView: View {
                 ToolbarItem(placement: .topBarLeading) { ButtonBackView{dismiss() } }
             }
         }
-        .onAppear { saveOrUpdate() }
+        .navigationBarBackButtonHidden(true)
+        .onDisappear { saveOrUpdate() }
         .onTapGesture { hideKeyboard() }
     }
     

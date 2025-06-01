@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MainView: View {
     
+    @State private var editingItem: ItemEntity?
     @StateObject private var vm = CoreDataViewModel()
     @State var searchText: String = ""
     
@@ -22,7 +23,7 @@ struct MainView: View {
                     }
                     .contextMenu {
                         Button {
-                            
+                            editingItem = item
                         } label: {
                             Label("Редактировать", systemImage: "pencil")
                         }
@@ -32,7 +33,9 @@ struct MainView: View {
                             Label("Поделиться", systemImage: "square.and.arrow.up")
                         }
                         Button(role: .destructive) {
-                            vm.deleteItem()
+                            if let index = vm.items.firstIndex(of: item) {
+                                vm.deleteItem(indexSet: IndexSet(integer: index))
+                            }
                         } label: {
                             Label("Удалить", systemImage: "trash")
                         }
@@ -41,6 +44,9 @@ struct MainView: View {
             }
             .navigationTitle("Задачи")
             .searchable(text: $searchText)
+            .navigationDestination(item: $editingItem) { item in
+                ItemView(vm: vm, item: item)
+            }
         }
     }
 }
