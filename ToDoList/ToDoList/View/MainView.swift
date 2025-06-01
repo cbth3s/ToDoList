@@ -10,9 +10,11 @@ import SwiftUI
 
 struct MainView: View {
     
+    @State private var activeShareItem: ItemEntity?
     @State private var isCreatingNewItem = false
     @State private var editingItem: ItemEntity?
     @StateObject private var vm = CoreDataViewModel()
+    
     
     var body: some View {
         NavigationStack {
@@ -30,10 +32,14 @@ struct MainView: View {
                                     if let index = vm.items.firstIndex(of: item) {
                                         vm.deleteItem(indexSet: IndexSet(integer: index))
                                     }
-                                }
+                                },
+                                onShare: { activeShareItem = item }
                             )
                         }
                     }
+                }
+                .sheet(item: $activeShareItem) { item in
+                    ActivityView(activityItems: ["Моя задача: \(item.title ?? "Без названия")\n\(item.details ?? "")"])
                 }
                 BottomBarView(vm: vm) { isCreatingNewItem = true }
                 

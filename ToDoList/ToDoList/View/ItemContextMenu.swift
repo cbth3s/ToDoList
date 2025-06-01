@@ -11,6 +11,8 @@ struct ItemContextMenu: View {
     let item: ItemEntity
     let onEdit: () -> Void
     let onDelete: () -> Void
+    let onShare: () -> Void
+    @State private var showShareSheet = false
     
     var body: some View {
         Button {
@@ -20,6 +22,7 @@ struct ItemContextMenu: View {
         }
         
         Button {
+            onShare()
         } label: {
             Label("Поделиться", systemImage: "square.and.arrow.up")
         }
@@ -31,4 +34,5 @@ struct ItemContextMenu: View {
         }
     }
 }
+
 
