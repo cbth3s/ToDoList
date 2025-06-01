@@ -10,42 +10,53 @@ import SwiftUI
 
 struct MainView: View {
     
+    @State private var isCreatingNewItem = false
     @State private var editingItem: ItemEntity?
     @StateObject private var vm = CoreDataViewModel()
     @State var searchText: String = ""
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(vm.items, id: \.self) { item in
-                    ItemCellView(item: item) {
-                        vm.toggleCompletion(item: item)
-                    }
-                    .contextMenu {
-                        Button {
-                            editingItem = item
-                        } label: {
-                            Label("Редактировать", systemImage: "pencil")
+            ZStack {
+                List {
+                    ForEach(vm.items, id: \.self) { item in
+                        ItemCellView(item: item) {
+                            vm.toggleCompletion(item: item)
                         }
-                        Button {
-                            
-                        } label: {
-                            Label("Поделиться", systemImage: "square.and.arrow.up")
-                        }
-                        Button(role: .destructive) {
-                            if let index = vm.items.firstIndex(of: item) {
-                                vm.deleteItem(indexSet: IndexSet(integer: index))
+                        .contextMenu {
+                            Button {
+                                editingItem = item
+                            } label: {
+                                Label("Редактировать", systemImage: "pencil")
                             }
-                        } label: {
-                            Label("Удалить", systemImage: "trash")
+                            Button {
+                                
+                            } label: {
+                                Label("Поделиться", systemImage: "square.and.arrow.up")
+                            }
+                            Button(role: .destructive) {
+                                if let index = vm.items.firstIndex(of: item) {
+                                    vm.deleteItem(indexSet: IndexSet(integer: index))
+                                }
+                            } label: {
+                                Label("Удалить", systemImage: "trash")
+                            }
                         }
                     }
                 }
+                BottomBarView(vm: vm) { isCreatingNewItem = true }
+                .padding(.top, 600)
             }
+            .listStyle(.plain)
             .navigationTitle("Задачи")
             .searchable(text: $searchText)
+            ///Navigation to edit task
             .navigationDestination(item: $editingItem) { item in
                 ItemView(vm: vm, item: item)
+            }
+            ///Navigation to create new task
+            .navigationDestination(isPresented: $isCreatingNewItem) {
+                ItemView(vm: vm)
             }
         }
     }

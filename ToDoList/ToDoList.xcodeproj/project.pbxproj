@@ -20,6 +20,7 @@
 		54C998382DECBFF6005DC941 /* ItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C998372DECBFF6005DC941 /* ItemCellView.swift */; };
 		54C9983A2DECC011005DC941 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C998392DECC011005DC941 /* ItemView.swift */; };
 		54C9983C2DECC050005DC941 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9983B2DECC050005DC941 /* MainView.swift */; };
+		54C9983E2DECE107005DC941 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9983D2DECE107005DC941 /* BottomBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		54C998372DECBFF6005DC941 /* ItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellView.swift; sourceTree = "<group>"; };
 		54C998392DECC011005DC941 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		54C9983B2DECC050005DC941 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		54C9983D2DECE107005DC941 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				54C998372DECBFF6005DC941 /* ItemCellView.swift */,
 				54C998392DECC011005DC941 /* ItemView.swift */,
 				54C9983B2DECC050005DC941 /* MainView.swift */,
+				54C9983D2DECE107005DC941 /* BottomBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				54C9983C2DECC050005DC941 /* MainView.swift in Sources */,
 				54C998382DECBFF6005DC941 /* ItemCellView.swift in Sources */,
 				54C997F52DECA9C6005DC941 /* ContentView.swift in Sources */,
+				54C9983E2DECE107005DC941 /* BottomBarView.swift in Sources */,
 				54C997F62DECA9C6005DC941 /* ToDoListApp.swift in Sources */,
 				54C997FF2DECAB46005DC941 /* ItemModel.swift in Sources */,
 				54C9983A2DECC011005DC941 /* ItemView.swift in Sources */,
