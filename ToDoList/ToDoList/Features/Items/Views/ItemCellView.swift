@@ -29,13 +29,13 @@ struct ItemCellView: View {
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(item.title ?? "Без названия")
-                    .font(.system(size: 15, weight: .bold))
+                    .font(.system(size: 16, weight: .bold))
                     .foregroundStyle(item.completed ? .gray : textColor)
                     .strikethrough(item.completed)
                 
                 if let details = item.details, !details.isEmpty {
                     Text(details)
-                        .font(.subheadline)
+                        .font(.system(size: 12))
                         .foregroundStyle(item.completed ? .gray : textColor)
                 }
                 
@@ -55,3 +55,5 @@ struct ItemCellView: View {
             colorScheme == .dark ? .white : .black
         }
 }
+
+

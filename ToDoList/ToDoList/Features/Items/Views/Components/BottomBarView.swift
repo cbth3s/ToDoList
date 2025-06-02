@@ -27,8 +27,14 @@ struct BottomBarView: View {
             .padding(.trailing)
         }
         .padding(.vertical, 10)
-        .background(.gray.opacity(0.6))
+        .background(.gray.opacity(0.35))
         .edgesIgnoringSafeArea(.bottom)
         .overlay(Divider(), alignment: .top)
+    }
+}
+
+#Preview {
+    BottomBarView(vm: CoreDataViewModel()) {
+        
     }
 }
