@@ -49,8 +49,15 @@ final class CoreDataViewModel: ObservableObject {
     }
     
     func addItem(title: String, id: Int16, details: String?, date: Date, completed: Bool) {
+        
+        ///Check that the title is not empty or consists only of spaces
+        guard !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            print("Ошибка: название задачи не может быть пустым")
+            return
+        }
+        
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            guard let self = self else { return } ///safely remove self
+            guard let self = self else { return } 
             
             let backgroundContext = self.manager.backgroundContext
             backgroundContext.perform {
@@ -76,7 +83,7 @@ final class CoreDataViewModel: ObservableObject {
     func toggleCompletion(item: ItemEntity) {
         let itemID = item.objectID
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            guard let self = self else { return } ///safely remove self
+            guard let self = self else { return }
             
             let backgroundContext = self.manager.backgroundContext
             backgroundContext.perform {
@@ -100,7 +107,7 @@ final class CoreDataViewModel: ObservableObject {
         let itemID = items[index].objectID
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            guard let self = self else { return } ///safely remove self
+            guard let self = self else { return }
             
             let backgroundContext = self.manager.backgroundContext
             backgroundContext.perform {
@@ -123,7 +130,7 @@ final class CoreDataViewModel: ObservableObject {
         let itemID = item.objectID
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            guard let self = self else { return } ///safely remove self
+            guard let self = self else { return }
             
             let backgroundContext = self.manager.backgroundContext
             backgroundContext.perform {
