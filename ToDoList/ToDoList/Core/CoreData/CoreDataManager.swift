@@ -37,6 +37,7 @@ final class CoreDataManager {
     }
     
     func saveMainContext() {
+        
         guard mainContext.hasChanges else { return }
         do {
             try mainContext.save()
@@ -47,6 +48,7 @@ final class CoreDataManager {
     }
     
     func saveBackgroundContext() {
+        
         guard backgroundContext.hasChanges else { return }
         do {
             try backgroundContext.save()
@@ -60,7 +62,9 @@ final class CoreDataManager {
 }
 
 extension CoreDataManager {
+    
     func getLastItemID() -> Int16 {
+        
         let request: NSFetchRequest<ItemEntity> = ItemEntity.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "id", ascending: false)]
         request.fetchLimit = 1

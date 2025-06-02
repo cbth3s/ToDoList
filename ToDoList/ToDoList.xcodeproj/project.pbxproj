@@ -24,6 +24,7 @@
 		54C9986D2DECF0FF005DC941 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9986C2DECF0FF005DC941 /* DataManager.swift */; };
 		54C9986F2DED0BB3005DC941 /* ShareHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9986E2DED0BB3005DC941 /* ShareHelper.swift */; };
 		54C9989A2DED21FC005DC941 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C998982DED21FC005DC941 /* ToDoListTests.swift */; };
+		54C998A42DEDD995005DC941 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C998A32DEDD995005DC941 /* DateFormatterExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		54C9986E2DED0BB3005DC941 /* ShareHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareHelper.swift; sourceTree = "<group>"; };
 		54C998802DED2124005DC941 /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C998982DED21FC005DC941 /* ToDoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTests.swift; sourceTree = "<group>"; };
+		54C998A32DEDD995005DC941 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				54C998352DECBFE1005DC941 /* ButtonBackView.swift */,
+				54C998A32DEDD995005DC941 /* DateFormatterExtension.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				54C9983E2DECE107005DC941 /* BottomBarView.swift in Sources */,
 				54C997F62DECA9C6005DC941 /* ToDoListApp.swift in Sources */,
 				54C9986D2DECF0FF005DC941 /* DataManager.swift in Sources */,
+				54C998A42DEDD995005DC941 /* DateFormatterExtension.swift in Sources */,
 				54C997FF2DECAB46005DC941 /* ItemModel.swift in Sources */,
 				54C9983A2DECC011005DC941 /* ItemView.swift in Sources */,
 				54C998052DECAD09005DC941 /* CoreDataVIewModel.swift in Sources */,

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ItemContextMenu: View {
+    
     let item: ItemEntity
     let onEdit: () -> Void
     let onDelete: () -> Void
@@ -15,6 +16,7 @@ struct ItemContextMenu: View {
     @State private var showShareSheet = false
     
     var body: some View {
+        
         Button {
             onEdit()
         } label: {

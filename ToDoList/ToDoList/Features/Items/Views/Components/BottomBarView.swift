@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BottomBarView: View {
+    
     @ObservedObject var vm: CoreDataViewModel
     var addAction: () -> Void
     
@@ -19,7 +20,9 @@ struct BottomBarView: View {
                 .frame(maxWidth: .infinity)
                 .padding(.leading, 50)
             
-            Button(action: addAction) {
+            Button {
+                addAction()
+            } label: {
                 Image(systemName: "square.and.pencil")
                     .font(.system(size: 32))
                     .foregroundColor(.yellow)
@@ -33,8 +36,3 @@ struct BottomBarView: View {
     }
 }
 
-#Preview {
-    BottomBarView(vm: CoreDataViewModel()) {
-        
-    }
-}

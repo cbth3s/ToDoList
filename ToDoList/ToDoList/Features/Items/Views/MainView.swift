@@ -18,35 +18,38 @@ struct MainView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                List {
-                    ForEach(vm.filteredItems, id: \.self) { item in
-                        ItemCellView(item: item) {
-                            vm.toggleCompletion(item: item)
-                        }
-                        .contextMenu {
-                            ItemContextMenu(
-                                item: item,
-                                onEdit: { editingItem = item },
-                                onDelete: {
-                                    if let index = vm.items.firstIndex(of: item) {
-                                        vm.deleteItem(indexSet: IndexSet(integer: index))
-                                    }
-                                },
-                                onShare: { activeShareItem = item }
-                            )
-                        }
+            List {
+                
+                ForEach(vm.filteredItems, id: \.self) { item in
+                    ItemCellView(item: item) {
+                        vm.toggleCompletion(item: item)
+                    }
+                    .contextMenu {
+                        ItemContextMenu(
+                            item: item,
+                            onEdit: { editingItem = item },
+                            onDelete: {
+                                if let index = vm.items.firstIndex(of: item) {
+                                    vm.deleteItem(indexSet: IndexSet(integer: index))
+                                }
+                            },
+                            onShare: { activeShareItem = item }
+                        )
                     }
                 }
-                .sheet(item: $activeShareItem) { item in
-                    ActivityView(activityItems: ["Моя задача: \(item.title ?? "Без названия")\n\(item.details ?? "")"])
-                }
-                BottomBarView(vm: vm) { isCreatingNewItem = true }
-                
             }
             .listStyle(.plain)
-            .navigationTitle("Задачи")
+            ///Search string
             .searchable(text: $vm.searchText)
+            ///share window
+            .sheet(item: $activeShareItem) { item in
+                ActivityView(activityItems: ["Моя задача: \(item.title ?? "Без названия")\n\(item.details ?? "")"])
+            }
+            
+            BottomBarView(vm: vm) {
+                isCreatingNewItem = true
+            }
+            .navigationTitle("Задачи")
             ///Navigation to edit task
             .navigationDestination(item: $editingItem) { item in
                 ItemView(vm: vm, item: item)

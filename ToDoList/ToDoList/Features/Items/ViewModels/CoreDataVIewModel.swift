@@ -30,6 +30,7 @@ final class CoreDataViewModel: ObservableObject {
     }
     
     func fetchItem() {
+        
         let request = NSFetchRequest<ItemEntity>(entityName: "ItemEntity")
         
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
@@ -51,10 +52,7 @@ final class CoreDataViewModel: ObservableObject {
     func addItem(title: String, id: Int16, details: String?, date: Date, completed: Bool) {
         
         ///Check that the title is not empty or consists only of spaces
-        guard !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            print("Ошибка: название задачи не может быть пустым")
-            return
-        }
+        guard !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let self = self else { return } 
@@ -81,6 +79,7 @@ final class CoreDataViewModel: ObservableObject {
     }
     
     func toggleCompletion(item: ItemEntity) {
+        
         let itemID = item.objectID
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let self = self else { return }
@@ -95,14 +94,15 @@ final class CoreDataViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         self.fetchItem()
                     }
-                } catch {
-                    print("Ошибка при изменении статуса: \(error)")
+                } catch let error{
+                    print("ERROR WHEN CHANGING STATUS: \(error.localizedDescription)")
                 }
             }
         }
     }
     
     func deleteItem(indexSet: IndexSet) {
+        
         guard let index = indexSet.first else { return }
         let itemID = items[index].objectID
         
@@ -127,6 +127,7 @@ final class CoreDataViewModel: ObservableObject {
     }
     
     func updateItem(item: ItemEntity, newTitle: String?, newDetails: String?) {
+        
         let itemID = item.objectID
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
@@ -150,7 +151,7 @@ final class CoreDataViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         self.fetchItem()
                     }
-                }catch let error {
+                } catch let error {
                     print("UPDATE ERROR. \(error.localizedDescription)")
                 }
             }

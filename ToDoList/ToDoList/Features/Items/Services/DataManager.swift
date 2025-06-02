@@ -9,6 +9,7 @@ import Foundation
 import CoreData
 
 final class DataManager {
+    
     static let shared = DataManager()
     private let userDefaults = UserDefaults.standard
     private let viewModel = CoreDataViewModel()
@@ -16,6 +17,7 @@ final class DataManager {
     private init() {}
     
     func seedDataFromAPI() {
+        
         guard !userDefaults.bool(forKey: "hasSyncedInitialData") else { return }
         
         ApiManager.fetchItems { [weak self] result in
@@ -30,6 +32,7 @@ final class DataManager {
     }
     
     private func saveItemsToCoreData(items: [ItemModel]) {
+        
         items.forEach { item in
             self.viewModel.addItem(
                 title: item.title,

@@ -28,6 +28,7 @@ struct ItemCellView: View {
             }
             
             VStack(alignment: .leading, spacing: 4) {
+                
                 Text(item.title ?? "Без названия")
                     .font(.system(size: 16, weight: .bold))
                     .foregroundStyle(item.completed ? .gray : textColor)
@@ -47,10 +48,9 @@ struct ItemCellView: View {
     }
     
     private var dateFormat: String {
-        let format = DateFormatter()
-        format.dateFormat = "dd/MM/yy"
-        return format.string(from: item.date ?? Date())
+        DateFormatter.shortDate.string(from: item.date ?? Date())
     }
+    
     private var textColor: Color {
             colorScheme == .dark ? .white : .black
         }

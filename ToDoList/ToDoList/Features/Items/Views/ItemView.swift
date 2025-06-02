@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ItemView: View {
     
-    
     @ObservedObject var vm = CoreDataViewModel()
     @Environment(\.dismiss) private var dismiss
     
@@ -80,15 +79,13 @@ struct ItemView: View {
            }
        }
     
-    private var dateFormat: String {
-        let format = DateFormatter()
-        format.dateFormat = "dd/MM/yy"
-        return format.string(from: date)
-    }
-    
     private func hideKeyboard() {
         UIApplication.shared.sendAction(
             #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
+    private var dateFormat: String {
+        DateFormatter.shortDate.string(from: date)
     }
 }
 
