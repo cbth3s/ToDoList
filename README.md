@@ -29,7 +29,7 @@
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/yourname/ToDoList.git
+git clone https://github.com/cbth3s/ToDoList.git
 ```
 
 2. Откройте проект в Xcode:
